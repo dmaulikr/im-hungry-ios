@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D5936DB18C2EEEE00FCD2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */; };
+		0D5936DD18C2EEEE00FCD2E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */; };
+		0D5936DF18C2EEEE00FCD2E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DE18C2EEEE00FCD2E5 /* UIKit.framework */; };
+		0D5936E118C2EEEE00FCD2E5 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936E018C2EEEE00FCD2E5 /* SpriteKit.framework */; };
+		0D5936E718C2EEEE00FCD2E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936E518C2EEEE00FCD2E5 /* InfoPlist.strings */; };
+		0D5936E918C2EEEE00FCD2E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5936E818C2EEEE00FCD2E5 /* main.m */; };
+		0D5936ED18C2EEEE00FCD2E5 /* GJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5936EC18C2EEEE00FCD2E5 /* GJAppDelegate.m */; };
+		0D5936F018C2EEEE00FCD2E5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936EE18C2EEEE00FCD2E5 /* Main_iPhone.storyboard */; };
+		0D5936F318C2EEEE00FCD2E5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936F118C2EEEE00FCD2E5 /* Main_iPad.storyboard */; };
+		0D5936F618C2EEEE00FCD2E5 /* GJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5936F518C2EEEE00FCD2E5 /* GJViewController.m */; };
+		0D5936F918C2EEEE00FCD2E5 /* GJMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5936F818C2EEEE00FCD2E5 /* GJMyScene.m */; };
+		0D5936FB18C2EEEE00FCD2E5 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */; };
+		0D5936FD18C2EEEE00FCD2E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */; };
+		0D59370418C2EEEE00FCD2E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D59370318C2EEEE00FCD2E5 /* XCTest.framework */; };
+		0D59370518C2EEEE00FCD2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */; };
+		0D59370618C2EEEE00FCD2E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DE18C2EEEE00FCD2E5 /* UIKit.framework */; };
+		0D59370E18C2EEEE00FCD2E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D59370C18C2EEEE00FCD2E5 /* InfoPlist.strings */; };
+		0D59371018C2EEEE00FCD2E5 /* GameJam1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D59370F18C2EEEE00FCD2E5 /* GameJam1Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D59370718C2EEEE00FCD2E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D5936CF18C2EEED00FCD2E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D5936D618C2EEED00FCD2E5;
+			remoteInfo = GameJam1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D5936D718C2EEEE00FCD2E5 /* GameJam1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameJam1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0D5936DE18C2EEEE00FCD2E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0D5936E018C2EEEE00FCD2E5 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		0D5936E418C2EEEE00FCD2E5 /* GameJam1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameJam1-Info.plist"; sourceTree = "<group>"; };
+		0D5936E618C2EEEE00FCD2E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D5936E818C2EEEE00FCD2E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D5936EA18C2EEEE00FCD2E5 /* GameJam1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameJam1-Prefix.pch"; sourceTree = "<group>"; };
+		0D5936EB18C2EEEE00FCD2E5 /* GJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJAppDelegate.h; sourceTree = "<group>"; };
+		0D5936EC18C2EEEE00FCD2E5 /* GJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJAppDelegate.m; sourceTree = "<group>"; };
+		0D5936EF18C2EEEE00FCD2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		0D5936F218C2EEEE00FCD2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		0D5936F418C2EEEE00FCD2E5 /* GJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJViewController.h; sourceTree = "<group>"; };
+		0D5936F518C2EEEE00FCD2E5 /* GJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJViewController.m; sourceTree = "<group>"; };
+		0D5936F718C2EEEE00FCD2E5 /* GJMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMyScene.h; sourceTree = "<group>"; };
+		0D5936F818C2EEEE00FCD2E5 /* GJMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMyScene.m; sourceTree = "<group>"; };
+		0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0D59370218C2EEEE00FCD2E5 /* GameJam1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameJam1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D59370318C2EEEE00FCD2E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0D59370B18C2EEEE00FCD2E5 /* GameJam1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameJam1Tests-Info.plist"; sourceTree = "<group>"; };
+		0D59370D18C2EEEE00FCD2E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D59370F18C2EEEE00FCD2E5 /* GameJam1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameJam1Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D5936D418C2EEED00FCD2E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5936DD18C2EEEE00FCD2E5 /* CoreGraphics.framework in Frameworks */,
+				0D5936DF18C2EEEE00FCD2E5 /* UIKit.framework in Frameworks */,
+				0D5936E118C2EEEE00FCD2E5 /* SpriteKit.framework in Frameworks */,
+				0D5936DB18C2EEEE00FCD2E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D5936FF18C2EEEE00FCD2E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D59370418C2EEEE00FCD2E5 /* XCTest.framework in Frameworks */,
+				0D59370618C2EEEE00FCD2E5 /* UIKit.framework in Frameworks */,
+				0D59370518C2EEEE00FCD2E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D5936CE18C2EEED00FCD2E5 = {
+			isa = PBXGroup;
+			children = (
+				0D5936E218C2EEEE00FCD2E5 /* GameJam1 */,
+				0D59370918C2EEEE00FCD2E5 /* GameJam1Tests */,
+				0D5936D918C2EEEE00FCD2E5 /* Frameworks */,
+				0D5936D818C2EEEE00FCD2E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D5936D818C2EEEE00FCD2E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D5936D718C2EEEE00FCD2E5 /* GameJam1.app */,
+				0D59370218C2EEEE00FCD2E5 /* GameJam1Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D5936D918C2EEEE00FCD2E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */,
+				0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */,
+				0D5936DE18C2EEEE00FCD2E5 /* UIKit.framework */,
+				0D5936E018C2EEEE00FCD2E5 /* SpriteKit.framework */,
+				0D59370318C2EEEE00FCD2E5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D5936E218C2EEEE00FCD2E5 /* GameJam1 */ = {
+			isa = PBXGroup;
+			children = (
+				0D5936EB18C2EEEE00FCD2E5 /* GJAppDelegate.h */,
+				0D5936EC18C2EEEE00FCD2E5 /* GJAppDelegate.m */,
+				0D5936EE18C2EEEE00FCD2E5 /* Main_iPhone.storyboard */,
+				0D5936F118C2EEEE00FCD2E5 /* Main_iPad.storyboard */,
+				0D5936F418C2EEEE00FCD2E5 /* GJViewController.h */,
+				0D5936F518C2EEEE00FCD2E5 /* GJViewController.m */,
+				0D5936F718C2EEEE00FCD2E5 /* GJMyScene.h */,
+				0D5936F818C2EEEE00FCD2E5 /* GJMyScene.m */,
+				0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */,
+				0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */,
+				0D5936E318C2EEEE00FCD2E5 /* Supporting Files */,
+			);
+			path = GameJam1;
+			sourceTree = "<group>";
+		};
+		0D5936E318C2EEEE00FCD2E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D5936E418C2EEEE00FCD2E5 /* GameJam1-Info.plist */,
+				0D5936E518C2EEEE00FCD2E5 /* InfoPlist.strings */,
+				0D5936E818C2EEEE00FCD2E5 /* main.m */,
+				0D5936EA18C2EEEE00FCD2E5 /* GameJam1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D59370918C2EEEE00FCD2E5 /* GameJam1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0D59370F18C2EEEE00FCD2E5 /* GameJam1Tests.m */,
+				0D59370A18C2EEEE00FCD2E5 /* Supporting Files */,
+			);
+			path = GameJam1Tests;
+			sourceTree = "<group>";
+		};
+		0D59370A18C2EEEE00FCD2E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D59370B18C2EEEE00FCD2E5 /* GameJam1Tests-Info.plist */,
+				0D59370C18C2EEEE00FCD2E5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D5936D618C2EEED00FCD2E5 /* GameJam1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D59371318C2EEEE00FCD2E5 /* Build configuration list for PBXNativeTarget "GameJam1" */;
+			buildPhases = (
+				0D5936D318C2EEED00FCD2E5 /* Sources */,
+				0D5936D418C2EEED00FCD2E5 /* Frameworks */,
+				0D5936D518C2EEED00FCD2E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameJam1;
+			productName = GameJam1;
+			productReference = 0D5936D718C2EEEE00FCD2E5 /* GameJam1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D59370118C2EEEE00FCD2E5 /* GameJam1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D59371618C2EEEE00FCD2E5 /* Build configuration list for PBXNativeTarget "GameJam1Tests" */;
+			buildPhases = (
+				0D5936FE18C2EEEE00FCD2E5 /* Sources */,
+				0D5936FF18C2EEEE00FCD2E5 /* Frameworks */,
+				0D59370018C2EEEE00FCD2E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D59370818C2EEEE00FCD2E5 /* PBXTargetDependency */,
+			);
+			name = GameJam1Tests;
+			productName = GameJam1Tests;
+			productReference = 0D59370218C2EEEE00FCD2E5 /* GameJam1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D5936CF18C2EEED00FCD2E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GJ;
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					0D59370118C2EEEE00FCD2E5 = {
+						TestTargetID = 0D5936D618C2EEED00FCD2E5;
+					};
+				};
+			};
+			buildConfigurationList = 0D5936D218C2EEED00FCD2E5 /* Build configuration list for PBXProject "GameJam1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D5936CE18C2EEED00FCD2E5;
+			productRefGroup = 0D5936D818C2EEEE00FCD2E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D5936D618C2EEED00FCD2E5 /* GameJam1 */,
+				0D59370118C2EEEE00FCD2E5 /* GameJam1Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D5936D518C2EEED00FCD2E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5936FB18C2EEEE00FCD2E5 /* Spaceship.png in Resources */,
+				0D5936FD18C2EEEE00FCD2E5 /* Images.xcassets in Resources */,
+				0D5936F318C2EEEE00FCD2E5 /* Main_iPad.storyboard in Resources */,
+				0D5936F018C2EEEE00FCD2E5 /* Main_iPhone.storyboard in Resources */,
+				0D5936E718C2EEEE00FCD2E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D59370018C2EEEE00FCD2E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D59370E18C2EEEE00FCD2E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D5936D318C2EEED00FCD2E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5936E918C2EEEE00FCD2E5 /* main.m in Sources */,
+				0D5936F618C2EEEE00FCD2E5 /* GJViewController.m in Sources */,
+				0D5936ED18C2EEEE00FCD2E5 /* GJAppDelegate.m in Sources */,
+				0D5936F918C2EEEE00FCD2E5 /* GJMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D5936FE18C2EEEE00FCD2E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D59371018C2EEEE00FCD2E5 /* GameJam1Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D59370818C2EEEE00FCD2E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D5936D618C2EEED00FCD2E5 /* GameJam1 */;
+			targetProxy = 0D59370718C2EEEE00FCD2E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D5936E518C2EEEE00FCD2E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D5936E618C2EEEE00FCD2E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D5936EE18C2EEEE00FCD2E5 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D5936EF18C2EEEE00FCD2E5 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		0D5936F118C2EEEE00FCD2E5 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D5936F218C2EEEE00FCD2E5 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		0D59370C18C2EEEE00FCD2E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D59370D18C2EEEE00FCD2E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D59371118C2EEEE00FCD2E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D59371218C2EEEE00FCD2E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D59371418C2EEEE00FCD2E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GameJam1/GameJam1-Prefix.pch";
+				INFOPLIST_FILE = "GameJam1/GameJam1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0D59371518C2EEEE00FCD2E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GameJam1/GameJam1-Prefix.pch";
+				INFOPLIST_FILE = "GameJam1/GameJam1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0D59371718C2EEEE00FCD2E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GameJam1.app/GameJam1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GameJam1/GameJam1-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GameJam1Tests/GameJam1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0D59371818C2EEEE00FCD2E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GameJam1.app/GameJam1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GameJam1/GameJam1-Prefix.pch";
+				INFOPLIST_FILE = "GameJam1Tests/GameJam1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D5936D218C2EEED00FCD2E5 /* Build configuration list for PBXProject "GameJam1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D59371118C2EEEE00FCD2E5 /* Debug */,
+				0D59371218C2EEEE00FCD2E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D59371318C2EEEE00FCD2E5 /* Build configuration list for PBXNativeTarget "GameJam1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D59371418C2EEEE00FCD2E5 /* Debug */,
+				0D59371518C2EEEE00FCD2E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0D59371618C2EEEE00FCD2E5 /* Build configuration list for PBXNativeTarget "GameJam1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D59371718C2EEEE00FCD2E5 /* Debug */,
+				0D59371818C2EEEE00FCD2E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D5936CF18C2EEED00FCD2E5 /* Project object */;
+}
