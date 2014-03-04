@@ -7,7 +7,7 @@
 //
 
 #import "GJViewController.h"
-#import "GJMyScene.h"
+#import "GJGameScene.h"
 
 @implementation GJViewController
 
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [GJMyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [GJGameScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
@@ -45,7 +45,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 @end

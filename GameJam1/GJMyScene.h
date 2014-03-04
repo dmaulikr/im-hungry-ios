@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "GJScene.h"
 
-@interface GJMyScene : SKScene
+@interface GJMyScene : GJScene
 
 @end
