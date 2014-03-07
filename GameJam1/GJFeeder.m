@@ -30,6 +30,8 @@
 
 -(id)init{
     if(self = [super initWithImageNamed:TEXT_MOUTH_CLOSED]){
+        self.foodLimit = 5.0f;
+        
         self.openMouthAction = [SKAction setTexture:[SKTexture textureWithImageNamed:TEXT_MOUTH_OPEN]];
         self.closeMouthAction = [SKAction setTexture:[SKTexture textureWithImageNamed:TEXT_MOUTH_CLOSED]];
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width/2.0f];
@@ -57,12 +59,24 @@
 -(void)openMouth{
     self.currentState = MOUTH_OPENED;
     [self runAction:self.openMouthAction];
-    self.pukeEmitter.particleBirthRate = self.defaultPukeBirthRate;
+
 }
 
 -(void)closeMouth{
     self.currentState = MOUTH_CLOSED;
     [self runAction:self.closeMouthAction];
+
+}
+
+-(void)startPuking{
+    [self openMouth];
+    _isPuking = YES;
+     self.pukeEmitter.particleBirthRate = self.defaultPukeBirthRate;
+}
+
+-(void)stopPuking{
+    [self closeMouth];
+    _isPuking = NO;
     self.pukeEmitter.particleBirthRate = 0;
 }
 
@@ -86,6 +100,12 @@
                                          [SKAction removeFromParent]
                                          ]
                      ]];
+    
+    self.foodAcccumulator += 1.0f;
+    
+    if(self.foodAcccumulator >= self.foodLimit){
+        [self startPuking];
+    }
     
     //TODO: do other stuff?
 }

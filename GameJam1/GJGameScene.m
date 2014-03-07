@@ -64,8 +64,10 @@
     self.elapsedStartTime = currentTime - self.startTime;
     
     if(currentTime - self.lastfoodSpawnTime > self.foodSpawnInterval){
-        self.lastfoodSpawnTime = currentTime;
-        [self.foodFactory spawnFoodWithCategory:SALTY]; //TODO Change category
+        if(self.feeder.foodAcccumulator < self.feeder.foodLimit){
+            self.lastfoodSpawnTime = currentTime;
+            [self.foodFactory spawnFoodWithCategory:SALTY]; //TODO Change category
+        }
     }
     
     [self.feeder updatePukeAngle:elapsedTime];
@@ -78,11 +80,15 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.feeder openMouth];
+    if(!self.feeder.isPuking){
+        [self.feeder openMouth];
+    }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.feeder closeMouth];
+    if(!self.feeder.isPuking){
+        [self.feeder closeMouth];
+    }
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{

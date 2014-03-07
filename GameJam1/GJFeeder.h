@@ -19,9 +19,15 @@ enum GJFeederState {
 
 @property(nonatomic, assign) enum GJFeederState currentState;
 
+@property(nonatomic, assign) float foodLimit;
+@property(nonatomic, assign) float foodAcccumulator;
+@property(nonatomic, readonly) BOOL isPuking;
+
 -(void)openMouth;
 -(void)closeMouth;
 -(void)eatFood:(GJFood*)food;
+-(void)startPuking;
+-(void)stopPuking;
 -(void)updatePukeAngle:(NSTimeInterval)elapsedTime;
 
 @end
