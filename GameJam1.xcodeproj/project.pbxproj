@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D08109218DF3BCD0002061D /* GJStomach.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08109118DF3BCD0002061D /* GJStomach.m */; };
+		0D08109518DF557B0002061D /* GJColorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08109418DF557B0002061D /* GJColorFactory.m */; };
 		0D5936DB18C2EEEE00FCD2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */; };
 		0D5936DD18C2EEEE00FCD2E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */; };
 		0D5936DF18C2EEEE00FCD2E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DE18C2EEEE00FCD2E5 /* UIKit.framework */; };
@@ -35,6 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D08108F18DF38870002061D /* GameData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		0D08109018DF3BCD0002061D /* GJStomach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJStomach.h; sourceTree = "<group>"; };
+		0D08109118DF3BCD0002061D /* GJStomach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJStomach.m; sourceTree = "<group>"; };
+		0D08109318DF557B0002061D /* GJColorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJColorFactory.h; sourceTree = "<group>"; };
+		0D08109418DF557B0002061D /* GJColorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJColorFactory.m; sourceTree = "<group>"; };
 		0D5936D718C2EEEE00FCD2E5 /* GameJam1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameJam1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,6 +150,11 @@
 				0DE7878D18C3A55400D72FF1 /* GJFoodFactory.h */,
 				0DE7878E18C3A55400D72FF1 /* GJFoodFactory.m */,
 				0DE7879918C3BCD400D72FF1 /* CollisionMasks.h */,
+				0D08108F18DF38870002061D /* GameData.h */,
+				0D08109018DF3BCD0002061D /* GJStomach.h */,
+				0D08109118DF3BCD0002061D /* GJStomach.m */,
+				0D08109318DF557B0002061D /* GJColorFactory.h */,
+				0D08109418DF557B0002061D /* GJColorFactory.m */,
 			);
 			path = GameJam1;
 			sourceTree = "<group>";
@@ -258,10 +270,12 @@
 				0DE7878418C3972E00D72FF1 /* GJGameScene.m in Sources */,
 				0DE7878118C3971C00D72FF1 /* GJTitleScene.m in Sources */,
 				0DE7878C18C39A5F00D72FF1 /* GJFeeder.m in Sources */,
+				0D08109518DF557B0002061D /* GJColorFactory.m in Sources */,
 				0D5936E918C2EEEE00FCD2E5 /* main.m in Sources */,
 				0D5936F618C2EEEE00FCD2E5 /* GJViewController.m in Sources */,
 				0DE7878918C398B500D72FF1 /* GJFood.m in Sources */,
 				0DE7877E18C36B5A00D72FF1 /* GJScene.m in Sources */,
+				0D08109218DF3BCD0002061D /* GJStomach.m in Sources */,
 				0DE7878F18C3A55400D72FF1 /* GJFoodFactory.m in Sources */,
 				0D5936ED18C2EEEE00FCD2E5 /* GJAppDelegate.m in Sources */,
 				0D5936F918C2EEEE00FCD2E5 /* GJMyScene.m in Sources */,

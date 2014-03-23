@@ -11,7 +11,10 @@
 #import "GJFeeder.h"
 #import "GJFoodFactory.h"
 #import "CollisionMasks.h"
+#import "GJStomach.h"
 #import <stdlib.h>
+#import "GameData.h"
+#import "GJColorFactory.h"
 
 @interface GJGameScene()
 
@@ -21,6 +24,7 @@
 @property(nonatomic, assign) NSTimeInterval lastfoodSpawnTime;
 
 @property(nonatomic, strong) GJFeeder* feeder;
+@property(nonatomic, strong) GJStomach* feederStomach;
 @property(nonatomic, strong) GJFoodFactory* foodFactory;
 
 @property(nonatomic, assign) NSTimeInterval foodSpawnInterval;
@@ -36,6 +40,13 @@
         
         self.physicsWorld.contactDelegate = self;
         
+        self.feederStomach = [[GJStomach alloc] initWithRect:CGRectMake(0, 0, size.width, size.height)
+                                                       color:[UIColor greenColor]];
+        self.feederStomach.yScale = 0.0f;
+        self.feederStomach.zPosition = -1000;
+        
+        [self addChild:self.feederStomach];
+        
         self.feeder = [[GJFeeder alloc] init];
         self.feeder.anchorPoint = CGPointMake(0.5f, 0);
         self.feeder.position = CGPointMake(size.width/2.0f, 0);
@@ -44,7 +55,7 @@
         self.foodFactory = [[GJFoodFactory alloc] init];
         self.foodFactory.position = CGPointMake(size.width/2.0f, size.height-60);
         
-        self.foodSpawnInterval = 0.5f;
+        self.foodSpawnInterval = INIT_FOOD_SPAWN_INTERVAL;
         
         [self addChild:self.foodFactory];
     }
@@ -57,6 +68,22 @@
     if(self.startTime == 0){
         self.startTime = currentTime;
         self.lastTime = currentTime;
+    }
+    
+    float targetStocmachScale = self.feeder.foodAcccumulator / self.feeder.foodLimit;
+    if(self.feederStomach.yScale != targetStocmachScale && ![self.feederStomach hasActions]){
+        float d = STOMACH_BAR_SCALE_ANIMATION_DURATION;
+        SKAction* stomachScale = [SKAction sequence:@[[SKAction scaleYTo:targetStocmachScale*1.08f duration:d/3.0f],
+                                                      [SKAction scaleYTo:targetStocmachScale*0.95f duration:d/3.0f],
+                                                      [SKAction scaleYTo:targetStocmachScale duration:d/3.0f],
+                                                      ]];
+        [self.feederStomach runAction: stomachScale];
+    }
+    
+    if(!self.feeder.isPuking){
+        self.feederStomach.color = [GJColorFactory sinedGreenColor];
+    }else{
+        self.feederStomach.color = [GJColorFactory rainbowColor];
     }
     
     NSTimeInterval elapsedTime = currentTime - self.lastTime;
@@ -113,25 +140,25 @@
                 
                 food.zPosition = 10;
                 
-//                float halfWidth = food.frame.size.width/2.0f;
-//                CGRect leftHalf = CGRectMake(0, 0, halfWidth, food.frame.size.height);
-//                CGRect rightHalf = CGRectMake(halfWidth, 0, halfWidth, food.frame.size.height);
-//                
-//                SKTexture* textPartLeft = [SKTexture textureWithRect:leftHalf inTexture:food.texture];
-//                SKTexture* textPartRight = [SKTexture textureWithRect:rightHalf inTexture:food.texture];
-//                
-//                SKSpriteNode* leftPart = [[SKSpriteNode alloc] initWithTexture:textPartLeft];
-//                SKSpriteNode* rightPart = [[SKSpriteNode alloc] initWithTexture:textPartRight];
-//                
-//                leftPart.position = food.position;
-//                rightPart.position = food.position;
-//                
-//                leftPart.name = @"food";
-//                rightPart.name = @"food";
-//                
-//                [self.foodFactory addChild:leftPart];
-//                [self.foodFactory addChild:rightPart];
-//                [food removeFromParent];
+                //                float halfWidth = food.frame.size.width/2.0f;
+                //                CGRect leftHalf = CGRectMake(0, 0, halfWidth, food.frame.size.height);
+                //                CGRect rightHalf = CGRectMake(halfWidth, 0, halfWidth, food.frame.size.height);
+                //
+                //                SKTexture* textPartLeft = [SKTexture textureWithRect:leftHalf inTexture:food.texture];
+                //                SKTexture* textPartRight = [SKTexture textureWithRect:rightHalf inTexture:food.texture];
+                //
+                //                SKSpriteNode* leftPart = [[SKSpriteNode alloc] initWithTexture:textPartLeft];
+                //                SKSpriteNode* rightPart = [[SKSpriteNode alloc] initWithTexture:textPartRight];
+                //
+                //                leftPart.position = food.position;
+                //                rightPart.position = food.position;
+                //
+                //                leftPart.name = @"food";
+                //                rightPart.name = @"food";
+                //                
+                //                [self.foodFactory addChild:leftPart];
+                //                [self.foodFactory addChild:rightPart];
+                //                [food removeFromParent];
             }
         }
     }

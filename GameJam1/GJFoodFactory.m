@@ -10,6 +10,7 @@
 #import "GJFoodFactory.h"
 #import "CollisionMasks.h"
 #import <stdlib.h>
+#import "GameData.h"
 
 @interface GJFoodFactory()
 @property(nonatomic, strong) SKAction* foodImpulse;
@@ -30,9 +31,12 @@
             node.physicsBody.velocity = CGVectorMake(0, -targetFoodVelocity);
         }];
         self.foodSpawn = [SKAction sequence:@[
-                                              [SKAction scaleTo: 1.2f duration:0.25f],
-                                              [SKAction scaleTo: 0.8f duration:0.25f],
-                                              [SKAction scaleTo: 1.0f duration:0.25f]
+                                              [SKAction scaleTo: FOOD_SPAWN_ANIMATION_SCALE_1
+                                                       duration:FOOD_SPAWN_ANIMATION_SCALE_1_DURATION],
+                                              [SKAction scaleTo: FOOD_SPAWN_ANIMATION_SCALE_1
+                                                       duration:FOOD_SPAWN_ANIMATION_SCALE_2_DURATION],
+                                              [SKAction scaleTo: 1.0f
+                                                       duration:FOOD_SPAWN_ANIMATION_SCALE_RESTORE_DURATION]
                                               ]];
     }
     return self;

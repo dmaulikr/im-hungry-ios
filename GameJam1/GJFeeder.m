@@ -10,6 +10,7 @@
 #import "GJFeeder.h"
 #import "GJFood.h"
 #import "CollisionMasks.h"
+#import "GameData.h"
 #import <math.h>
 
 #define TEXT_MOUTH_CLOSED @"packman_closed.png"
@@ -30,7 +31,7 @@
 
 -(id)init{
     if(self = [super initWithImageNamed:TEXT_MOUTH_CLOSED]){
-        self.foodLimit = 5.0f;
+        self.foodLimit = INIT_FOOD_LIMIT;
         
         self.openMouthAction = [SKAction setTexture:[SKTexture textureWithImageNamed:TEXT_MOUTH_OPEN]];
         self.closeMouthAction = [SKAction setTexture:[SKTexture textureWithImageNamed:TEXT_MOUTH_CLOSED]];
@@ -48,7 +49,7 @@
         [self addChild:self.pukeEmitter];
         
         self.motionManager = [[CMMotionManager alloc] init];
-        self.motionManager.gyroUpdateInterval = 0.1f;
+        self.motionManager.gyroUpdateInterval = GYROSCOPE_INTERVAL_UPDATE;
         if(self.motionManager.gyroAvailable){
             [self.motionManager startGyroUpdates];
         }
@@ -96,7 +97,8 @@
                                                                 actionBlock:^(SKNode *node, CGFloat elapsedTime) {
                                                                     node.physicsBody.velocity = CGVectorMake(0, 0);
                                                                 }],
-                                         [SKAction scaleTo:0.0f duration:0.5f],
+                                         [SKAction scaleTo:FOOD_EAT_ANIMATION_SCALE_TO
+                                                  duration:FOOD_EAT_ANIMATION_SCALE_TO_DURATION],
                                          [SKAction removeFromParent]
                                          ]
                      ]];
