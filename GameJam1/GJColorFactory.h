@@ -10,8 +10,8 @@
 
 @interface GJColorFactory : NSObject
 
-+(UIColor*)sinedGreenColor;
++(UIColor*)sinedGreenColor:(int)t;
 
-+(UIColor*)rainbowColor;
++(UIColor*)rainbowColor:(int)t;
 
 @end

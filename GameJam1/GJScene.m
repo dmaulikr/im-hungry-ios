@@ -7,6 +7,7 @@
 //
 
 #import "GJScene.h"
+#import <math.h>
 
 @interface GJScene()
 #ifdef DEBUG
@@ -22,6 +23,7 @@
 #ifdef DEBUG
         self.debugOverlay = [SKNode node];
         [self addChild:self.debugOverlay];
+        self.view.showsPhysics = YES;
 #endif
     }
     return self;
@@ -41,7 +43,7 @@
     if(self.debugShowGravity){
         [self debugGravity];
     }
-    
+
     if(self.debugShowNodeFrames){
         [self debugNodeFrames];
     }
@@ -51,7 +53,6 @@
 -(void)debugGravity{
     SKShapeNode *gravityLine = [[SKShapeNode alloc] init];
     gravityLine.position = CGPointMake (200,200);
-    
     
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, 0.0, 0.0);

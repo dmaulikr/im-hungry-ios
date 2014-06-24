@@ -10,9 +10,7 @@
 
 @implementation GJColorFactory
 
-+(UIColor*)sinedGreenColor{
-    static int t = 0;
-    t++;
++(UIColor*)sinedGreenColor:(int)t{
     float sin = sinf(t*0.1f);
     float green = sin*sin;
     green /= 4;
@@ -20,8 +18,7 @@
     return [UIColor colorWithRed:0 green:green blue:0 alpha:1.0f];
 }
 
-+(UIColor*)rainbowColor{
-    static int t = 0;
++(UIColor*)rainbowColor:(int)t{
     t+=12;
     return [UIColor colorWithHue:(t%360)/360.0f saturation:1.0f brightness:1.0f alpha:1.0f];
 }

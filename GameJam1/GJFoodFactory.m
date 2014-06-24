@@ -55,8 +55,8 @@
     food.physicsBody.contactTestBitMask = 0x00000000;
     food.physicsBody.collisionBitMask = 0x00000000;
     [food runAction:[SKAction sequence:@[self.foodSpawn,
-                                        self.foodImpulse]
-                    ]];
+                                         self.foodImpulse]
+                     ]];
     [self addChild:food];
     
     float randomAngle = 2*((arc4random() % 100)/100.0f - 0.5f);
@@ -69,6 +69,18 @@
         if(!CGRectIntersectsRect(self.frame, node.frame)){
             [node removeFromParent];
         }
+    }];
+}
+
+-(void)destroyAllFoods{
+    [self enumerateChildNodesWithName:@"food" usingBlock:^(SKNode *node, BOOL *stop) {
+        [node runAction:
+         [SKAction sequence:
+          @[
+            [SKAction scaleTo:0.0f duration:0.3f],
+            [SKAction removeFromParent]
+            ]]
+         ];
     }];
 }
 

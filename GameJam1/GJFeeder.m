@@ -9,12 +9,10 @@
 #import <CoreMotion/CoreMotion.h>
 #import "GJFeeder.h"
 #import "GJFood.h"
+#import "GJVomit.h"
 #import "CollisionMasks.h"
 #import "GameData.h"
 #import <math.h>
-
-#define TEXT_MOUTH_CLOSED @"packman_closed.png"
-#define TEXT_MOUTH_OPEN @"packman_open.png"
 
 @interface GJFeeder()
 
@@ -22,6 +20,10 @@
 @property(nonatomic, strong) SKAction* closeMouthAction;
 @property(nonatomic, strong) SKEmitterNode* pukeEmitter;
 @property(nonatomic,assign) int defaultPukeBirthRate;
+
+@property(nonatomic, assign) NSTimeInterval vomitEmitTimeAccumulator;
+@property(nonatomic, assign) NSTimeInterval vomitEmitInterval;
+@property(nonatomic, assign) int vomitCount;
 
 @property(nonatomic, strong) CMMotionManager* motionManager;
 
@@ -32,6 +34,8 @@
 -(id)init{
     if(self = [super initWithImageNamed:TEXT_MOUTH_CLOSED]){
         self.foodLimit = INIT_FOOD_LIMIT;
+        
+        self.vomitEmitInterval = DEFAULT_VOMIT_EMIT_INTERVAL;
         
         self.openMouthAction = [SKAction setTexture:[SKTexture textureWithImageNamed:TEXT_MOUTH_OPEN]];
         self.closeMouthAction = [SKAction setTexture:[SKTexture textureWithImageNamed:TEXT_MOUTH_CLOSED]];
@@ -60,25 +64,36 @@
 -(void)openMouth{
     self.currentState = MOUTH_OPENED;
     [self runAction:self.openMouthAction];
-
+    
 }
 
 -(void)closeMouth{
     self.currentState = MOUTH_CLOSED;
     [self runAction:self.closeMouthAction];
-
+    
 }
 
 -(void)startPuking{
     [self openMouth];
     _isPuking = YES;
-     self.pukeEmitter.particleBirthRate = self.defaultPukeBirthRate;
+    self.pukeEmitter.particleBirthRate = self.defaultPukeBirthRate;
 }
 
 -(void)stopPuking{
     [self closeMouth];
     _isPuking = NO;
     self.pukeEmitter.particleBirthRate = 0;
+}
+
+-(void)update:(NSTimeInterval)elapsedTime{
+    [self updatePukeAngle:elapsedTime];
+    if(self.isPuking){
+        self.foodAcccumulator-=FEEDER_FOOD_ACCUMULATOR_DECREASE_RATE*elapsedTime;
+        if(self.foodAcccumulator <= 0){
+            [self stopPuking];
+            self.foodAcccumulator = 0;
+        }
+    }
 }
 
 -(void)updatePukeAngle:(NSTimeInterval)elapsedTime{
@@ -88,6 +103,18 @@
         self.pukeEmitter.emissionAngle = M_PI - M_PI_4;
     }else if(self.pukeEmitter.emissionAngle < M_PI_4){
         self.pukeEmitter.emissionAngle = M_PI_4;
+    }
+    self.vomitEmitTimeAccumulator += elapsedTime;
+    if(self.vomitEmitTimeAccumulator >= self.vomitEmitInterval){
+        self.vomitEmitTimeAccumulator = 0;
+        if(_isPuking || true){
+            GJVomit* newVomit = [[GJVomit alloc] init];
+            newVomit.position = self.position;
+            [self.scene addChild:newVomit];
+            [newVomit setAngle:self.pukeEmitter.emissionAngle];
+            [self cleanVomit];
+            self.vomitCount++;
+        }
     }
 }
 
@@ -108,8 +135,15 @@
     if(self.foodAcccumulator >= self.foodLimit){
         [self startPuking];
     }
-    
-    //TODO: do other stuff?
+}
+
+-(void)cleanVomit{
+    [self.scene enumerateChildNodesWithName:@"vomit" usingBlock:^(SKNode *node, BOOL *stop) {
+        if(!CGRectIntersectsRect(self.scene.frame, node.frame)){
+            [node removeFromParent];
+            self.vomitCount--;
+        }
+    }];
 }
 
 @end

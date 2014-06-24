@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0D08109218DF3BCD0002061D /* GJStomach.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08109118DF3BCD0002061D /* GJStomach.m */; };
 		0D08109518DF557B0002061D /* GJColorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08109418DF557B0002061D /* GJColorFactory.m */; };
+		0D55C3AE192A8C0500C2BD93 /* GJChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D55C3AD192A8C0500C2BD93 /* GJChild.m */; };
+		0D55C3B1192A8E5300C2BD93 /* child0_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D55C3AF192A8E5300C2BD93 /* child0_closed.png */; };
+		0D55C3B2192A8E5300C2BD93 /* child0_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D55C3B0192A8E5300C2BD93 /* child0_open.png */; };
 		0D5936DB18C2EEEE00FCD2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */; };
 		0D5936DD18C2EEEE00FCD2E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */; };
 		0D5936DF18C2EEEE00FCD2E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5936DE18C2EEEE00FCD2E5 /* UIKit.framework */; };
@@ -19,9 +22,10 @@
 		0D5936F018C2EEEE00FCD2E5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936EE18C2EEEE00FCD2E5 /* Main_iPhone.storyboard */; };
 		0D5936F318C2EEEE00FCD2E5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936F118C2EEEE00FCD2E5 /* Main_iPad.storyboard */; };
 		0D5936F618C2EEEE00FCD2E5 /* GJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5936F518C2EEEE00FCD2E5 /* GJViewController.m */; };
-		0D5936F918C2EEEE00FCD2E5 /* GJMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5936F818C2EEEE00FCD2E5 /* GJMyScene.m */; };
 		0D5936FB18C2EEEE00FCD2E5 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */; };
 		0D5936FD18C2EEEE00FCD2E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */; };
+		0D8FF8461953B0BC009B1ECF /* GJAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8FF8451953B0BC009B1ECF /* GJAnimator.m */; };
+		0DDB781219589CAC00BB51B7 /* GJVomit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB781119589CAC00BB51B7 /* GJVomit.m */; };
 		0DE7877E18C36B5A00D72FF1 /* GJScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7877D18C36B5A00D72FF1 /* GJScene.m */; };
 		0DE7878118C3971C00D72FF1 /* GJTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7878018C3971C00D72FF1 /* GJTitleScene.m */; };
 		0DE7878418C3972E00D72FF1 /* GJGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7878318C3972E00D72FF1 /* GJGameScene.m */; };
@@ -42,6 +46,10 @@
 		0D08109118DF3BCD0002061D /* GJStomach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJStomach.m; sourceTree = "<group>"; };
 		0D08109318DF557B0002061D /* GJColorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJColorFactory.h; sourceTree = "<group>"; };
 		0D08109418DF557B0002061D /* GJColorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJColorFactory.m; sourceTree = "<group>"; };
+		0D55C3AC192A8C0500C2BD93 /* GJChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJChild.h; sourceTree = "<group>"; };
+		0D55C3AD192A8C0500C2BD93 /* GJChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJChild.m; sourceTree = "<group>"; };
+		0D55C3AF192A8E5300C2BD93 /* child0_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = child0_closed.png; sourceTree = "<group>"; };
+		0D55C3B0192A8E5300C2BD93 /* child0_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = child0_open.png; sourceTree = "<group>"; };
 		0D5936D718C2EEEE00FCD2E5 /* GameJam1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameJam1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5936DA18C2EEEE00FCD2E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D5936DC18C2EEEE00FCD2E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,10 +65,12 @@
 		0D5936F218C2EEEE00FCD2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0D5936F418C2EEEE00FCD2E5 /* GJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJViewController.h; sourceTree = "<group>"; };
 		0D5936F518C2EEEE00FCD2E5 /* GJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJViewController.m; sourceTree = "<group>"; };
-		0D5936F718C2EEEE00FCD2E5 /* GJMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GJMyScene.h; sourceTree = "<group>"; };
-		0D5936F818C2EEEE00FCD2E5 /* GJMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJMyScene.m; sourceTree = "<group>"; };
 		0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0D8FF8441953B0BC009B1ECF /* GJAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJAnimator.h; sourceTree = "<group>"; };
+		0D8FF8451953B0BC009B1ECF /* GJAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJAnimator.m; sourceTree = "<group>"; };
+		0DDB781019589CAC00BB51B7 /* GJVomit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJVomit.h; sourceTree = "<group>"; };
+		0DDB781119589CAC00BB51B7 /* GJVomit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJVomit.m; sourceTree = "<group>"; };
 		0DE7877C18C36B5A00D72FF1 /* GJScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJScene.h; sourceTree = "<group>"; };
 		0DE7877D18C36B5A00D72FF1 /* GJScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJScene.m; sourceTree = "<group>"; };
 		0DE7877F18C3971C00D72FF1 /* GJTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJTitleScene.h; sourceTree = "<group>"; };
@@ -137,8 +147,6 @@
 				0D5936F118C2EEEE00FCD2E5 /* Main_iPad.storyboard */,
 				0D5936F418C2EEEE00FCD2E5 /* GJViewController.h */,
 				0D5936F518C2EEEE00FCD2E5 /* GJViewController.m */,
-				0D5936F718C2EEEE00FCD2E5 /* GJMyScene.h */,
-				0D5936F818C2EEEE00FCD2E5 /* GJMyScene.m */,
 				0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */,
 				0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */,
 				0D5936E318C2EEEE00FCD2E5 /* Supporting Files */,
@@ -155,6 +163,12 @@
 				0D08109118DF3BCD0002061D /* GJStomach.m */,
 				0D08109318DF557B0002061D /* GJColorFactory.h */,
 				0D08109418DF557B0002061D /* GJColorFactory.m */,
+				0D55C3AC192A8C0500C2BD93 /* GJChild.h */,
+				0D55C3AD192A8C0500C2BD93 /* GJChild.m */,
+				0D8FF8441953B0BC009B1ECF /* GJAnimator.h */,
+				0D8FF8451953B0BC009B1ECF /* GJAnimator.m */,
+				0DDB781019589CAC00BB51B7 /* GJVomit.h */,
+				0DDB781119589CAC00BB51B7 /* GJVomit.m */,
 			);
 			path = GameJam1;
 			sourceTree = "<group>";
@@ -186,6 +200,8 @@
 		0DE7879218C3A9D400D72FF1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0D55C3AF192A8E5300C2BD93 /* child0_closed.png */,
+				0D55C3B0192A8E5300C2BD93 /* child0_open.png */,
 				0DE7879A18C3F2AD00D72FF1 /* vomi.sks */,
 				0DE7879B18C3F2AD00D72FF1 /* vomiTexture.png */,
 				0DE7879518C3B6A700D72FF1 /* packman_closed.png */,
@@ -223,6 +239,11 @@
 			attributes = {
 				CLASSPREFIX = GJ;
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					0D5936D618C2EEED00FCD2E5 = {
+						DevelopmentTeam = YXW8YWB9K4;
+					};
+				};
 			};
 			buildConfigurationList = 0D5936D218C2EEED00FCD2E5 /* Build configuration list for PBXProject "GameJam1" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -254,7 +275,9 @@
 				0DE7879D18C3F2AD00D72FF1 /* vomiTexture.png in Resources */,
 				0D5936F318C2EEEE00FCD2E5 /* Main_iPad.storyboard in Resources */,
 				0D5936F018C2EEEE00FCD2E5 /* Main_iPhone.storyboard in Resources */,
+				0D55C3B2192A8E5300C2BD93 /* child0_open.png in Resources */,
 				0DE7879418C3AC6100D72FF1 /* apple.png in Resources */,
+				0D55C3B1192A8E5300C2BD93 /* child0_closed.png in Resources */,
 				0D5936E718C2EEEE00FCD2E5 /* InfoPlist.strings in Resources */,
 				0DE7879818C3B6A700D72FF1 /* packman_open.png in Resources */,
 			);
@@ -267,6 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D55C3AE192A8C0500C2BD93 /* GJChild.m in Sources */,
+				0D8FF8461953B0BC009B1ECF /* GJAnimator.m in Sources */,
+				0DDB781219589CAC00BB51B7 /* GJVomit.m in Sources */,
 				0DE7878418C3972E00D72FF1 /* GJGameScene.m in Sources */,
 				0DE7878118C3971C00D72FF1 /* GJTitleScene.m in Sources */,
 				0DE7878C18C39A5F00D72FF1 /* GJFeeder.m in Sources */,
@@ -278,7 +304,6 @@
 				0D08109218DF3BCD0002061D /* GJStomach.m in Sources */,
 				0DE7878F18C3A55400D72FF1 /* GJFoodFactory.m in Sources */,
 				0D5936ED18C2EEEE00FCD2E5 /* GJAppDelegate.m in Sources */,
-				0D5936F918C2EEEE00FCD2E5 /* GJMyScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameJam1/GameJam1-Prefix.pch";
 				INFOPLIST_FILE = "GameJam1/GameJam1-Info.plist";
@@ -405,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameJam1/GameJam1-Prefix.pch";
 				INFOPLIST_FILE = "GameJam1/GameJam1-Info.plist";

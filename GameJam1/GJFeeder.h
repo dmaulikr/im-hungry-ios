@@ -28,6 +28,6 @@ enum GJFeederState {
 -(void)eatFood:(GJFood*)food;
 -(void)startPuking;
 -(void)stopPuking;
--(void)updatePukeAngle:(NSTimeInterval)elapsedTime;
+-(void)update:(NSTimeInterval)elapsedTime;
 
 @end

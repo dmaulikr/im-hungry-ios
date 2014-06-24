@@ -9,6 +9,11 @@
 #ifndef GameJam1_GameData_h
 #define GameJam1_GameData_h
 
+#define TEXT_MOUTH_CLOSED @"packman_closed.png"
+#define TEXT_MOUTH_OPEN @"packman_open.png"
+
+#define TEXT_CHILDREN_MOUTH_CLOSED @"child%u_closed"
+#define TEXT_CHILDREN_MOUTH_OPEN @"child%u_open"
 
 #define INIT_FOOD_SPAWN_INTERVAL 0.5f
 #define INIT_FOOD_LIMIT 10.0f
@@ -25,5 +30,10 @@
 #define FOOD_SPAWN_ANIMATION_SCALE_RESTORE_DURATION 0.25f
 
 #define STOMACH_BAR_SCALE_ANIMATION_DURATION 0.25f
+
+#define FEEDER_FOOD_ACCUMULATOR_DECREASE_RATE 1.0f
+
+#define DEFAULT_VOMIT_EMIT_INTERVAL 0.2f
+#define VOMIT_RADIUS 30
 
 #endif

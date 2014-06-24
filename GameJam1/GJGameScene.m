@@ -15,18 +15,31 @@
 #import <stdlib.h>
 #import "GameData.h"
 #import "GJColorFactory.h"
+#import "GJChild.h"
+#import "GJAnimator.h"
 
 @interface GJGameScene()
 
 @property(nonatomic, assign) NSTimeInterval startTime;
 @property(nonatomic, assign) NSTimeInterval lastTime;
 @property(nonatomic, assign) NSTimeInterval elapsedStartTime;
-@property(nonatomic, assign) NSTimeInterval lastfoodSpawnTime;
+
+@property(nonatomic, assign) int currentFrame;
 
 @property(nonatomic, strong) GJFeeder* feeder;
 @property(nonatomic, strong) GJStomach* feederStomach;
 @property(nonatomic, strong) GJFoodFactory* foodFactory;
+@property(nonatomic, strong) GJChild* child0;
+@property(nonatomic, strong) GJChild* child1;
+@property(nonatomic, strong) GJChild* child2;
+@property(assign) int lastGameState;
+@property(assign) int currentGameState;
+@property(assign) int nextGameState;
 
+#define GAME_STATE_EATING 1
+#define GAME_STATE_VOMITTING 2
+
+@property(nonatomic, assign) NSTimeInterval lastfoodSpawnTime;
 @property(nonatomic, assign) NSTimeInterval foodSpawnInterval;
 
 @end
@@ -35,6 +48,10 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        self.currentGameState = GAME_STATE_EATING;
+        self.lastGameState = GAME_STATE_EATING;
+        self.nextGameState = GAME_STATE_EATING;
         
         self.debugShowNodeFrames = YES;
         
@@ -52,6 +69,23 @@
         self.feeder.position = CGPointMake(size.width/2.0f, 0);
         [self addChild:self.feeder];
         
+        CGFloat childZoneWidth = size.width-size.width*0.3f;
+        CGFloat childZoneWidthLeftPadding = (size.width-childZoneWidth)/2.0f;
+        
+        self.child0 = [[GJChild alloc] initWithId:0];
+        self.child0.position = CGPointMake(childZoneWidthLeftPadding, size.height-self.child0.size.height/2);
+        [self addChild:self.child0];
+        self.child1 = [[GJChild alloc] initWithId:0];
+        self.child1.position = CGPointMake(size.width/2, size.height-self.child1.size.height/2);
+        [self addChild:self.child1];
+        self.child2 = [[GJChild alloc] initWithId:0];
+        self.child2.position = CGPointMake(size.width-childZoneWidthLeftPadding, size.height-self.child2.size.height/2);
+        [self addChild:self.child2];
+        
+        self.child0.hidden = YES;
+        self.child1.hidden = YES;
+        self.child2.hidden = YES;
+        
         self.foodFactory = [[GJFoodFactory alloc] init];
         self.foodFactory.position = CGPointMake(size.width/2.0f, size.height-60);
         
@@ -65,10 +99,14 @@
 -(void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     
+    self.currentFrame++;
+    
     if(self.startTime == 0){
         self.startTime = currentTime;
         self.lastTime = currentTime;
     }
+    
+    NSTimeInterval elapsedTime = currentTime - self.lastTime;
     
     float targetStocmachScale = self.feeder.foodAcccumulator / self.feeder.foodLimit;
     if(self.feederStomach.yScale != targetStocmachScale && ![self.feederStomach hasActions]){
@@ -80,30 +118,38 @@
         [self.feederStomach runAction: stomachScale];
     }
     
-    if(!self.feeder.isPuking){
-        self.feederStomach.color = [GJColorFactory sinedGreenColor];
-    }else{
-        self.feederStomach.color = [GJColorFactory rainbowColor];
+    if(self.currentFrame %2 == 0){
+        if(!self.feeder.isPuking){
+            self.feederStomach.color = [GJColorFactory sinedGreenColor:self.currentFrame];
+        }else{
+            self.feederStomach.color = [GJColorFactory rainbowColor:12*self.currentFrame];
+        }
     }
-    
-    NSTimeInterval elapsedTime = currentTime - self.lastTime;
     
     self.elapsedStartTime = currentTime - self.startTime;
     
     if(currentTime - self.lastfoodSpawnTime > self.foodSpawnInterval){
-        if(self.feeder.foodAcccumulator < self.feeder.foodLimit){
+        if(!self.feeder.isPuking && self.feeder.foodAcccumulator < self.feeder.foodLimit){
             self.lastfoodSpawnTime = currentTime;
             [self.foodFactory spawnFoodWithCategory:SALTY]; //TODO Change category
+            self.nextGameState = GAME_STATE_EATING;
         }
     }
     
-    [self.feeder updatePukeAngle:elapsedTime];
+    [self.feeder update:elapsedTime];
+    
+    if(self.currentGameState == GAME_STATE_VOMITTING && self.nextGameState == GAME_STATE_EATING){
+        [self hideChildren];
+    }
     
     self.lastTime = currentTime;
 }
 
 -(void)didSimulatePhysics{
     [super didSimulatePhysics];
+    
+    self.lastGameState = self.currentGameState;
+    self.currentGameState = self.nextGameState;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -135,6 +181,11 @@
             GJFood* food = (GJFood*)secondBody.node;
             if(self.feeder.currentState == MOUTH_OPENED){
                 [self.feeder eatFood:food];
+                if([self.feeder isPuking]){
+                    self.nextGameState = GAME_STATE_VOMITTING;
+                    [self showChildren];
+                    [self.foodFactory destroyAllFoods];
+                }
             }else{
                 //TODO: load textures from assets
                 
@@ -155,13 +206,33 @@
                 //
                 //                leftPart.name = @"food";
                 //                rightPart.name = @"food";
-                //                
+                //
                 //                [self.foodFactory addChild:leftPart];
                 //                [self.foodFactory addChild:rightPart];
                 //                [food removeFromParent];
             }
         }
+    }else if (firstBody.categoryBitMask & COL_MASK_VOMIT){
+        if(secondBody.categoryBitMask * COL_MASK_CHILD){
+            GJChild* child = (GJChild*)secondBody.node;
+            [child eatPuke];
+        }
     }
+}
+
+-(void)showChildren{
+    [self.child0 emptyStomach];
+    [self.child1 emptyStomach];
+    [self.child2 emptyStomach];
+    [GJAnimator appearBounce:self.child0];
+    [GJAnimator appearBounce:self.child1];
+    [GJAnimator appearBounce:self.child2];
+}
+
+-(void)hideChildren{
+    [GJAnimator disapearSlideUp:self.child0];
+    [GJAnimator disapearSlideUp:self.child1];
+    [GJAnimator disapearSlideUp:self.child2];
 }
 
 @end

@@ -12,5 +12,6 @@
 @interface GJFoodFactory : SKNode
 
 -(void)spawnFoodWithCategory:(enum GJFoodCategory)cat;
+-(void)destroyAllFoods;
 
 @end
