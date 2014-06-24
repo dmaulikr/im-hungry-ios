@@ -16,6 +16,8 @@
 @property(strong) SKTexture* MOUTH_OPEN;
 @property(strong) SKTexture* MOUTH_CLOSED;
 @property(assign) CGFloat currentStomach;
+@property(nonatomic, strong) SKEmitterNode* pukeSplashEmitter;
+@property(nonatomic,assign) int defaultPukeBirthRate;
 
 @end
 
@@ -33,6 +35,14 @@
         self.MOUTH_CLOSED =[SKTexture textureWithImageNamed:[NSString stringWithFormat:TEXT_CHILDREN_MOUTH_CLOSED, identifier]];
         
         self.currentStomach = 0;
+        
+        NSString *pukePath = [[NSBundle mainBundle] pathForResource:@"vomi" ofType:@"sks"];
+        
+        self.pukeSplashEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:pukePath];
+        self.defaultPukeBirthRate = self.pukeSplashEmitter.particleBirthRate;
+        self.pukeSplashEmitter.zPosition = 10;
+        self.pukeSplashEmitter.particleBirthRate = 0;
+        [self addChild:self.pukeSplashEmitter];
     }
     return self;
 }
@@ -51,6 +61,15 @@
                              [SKAction setTexture:self.MOUTH_CLOSED]
                              ];
         [self runAction:[SKAction sequence:actions]withKey:@"puke"];
+        
+        [self removeActionForKey:@"splash"];
+        [self runAction:[SKAction customActionWithDuration:0.5f actionBlock:^(SKNode *node, CGFloat elapsedTime) {
+            if(elapsedTime == 0){
+                self.pukeSplashEmitter.particleBirthRate = self.defaultPukeBirthRate;
+            }else if(elapsedTime >= 0.5f){
+                self.pukeSplashEmitter.particleBirthRate = 0;
+            }
+        }] withKey:@"splash"];
         
         if(self.isFull){
             [GJAnimator disapearSlideUp:self];

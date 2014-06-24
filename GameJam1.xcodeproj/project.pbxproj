@@ -25,6 +25,8 @@
 		0D5936FB18C2EEEE00FCD2E5 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936FA18C2EEEE00FCD2E5 /* Spaceship.png */; };
 		0D5936FD18C2EEEE00FCD2E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */; };
 		0D8FF8461953B0BC009B1ECF /* GJAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8FF8451953B0BC009B1ECF /* GJAnimator.m */; };
+		0DCFEA5819592774001B6353 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFEA5619592774001B6353 /* spark.png */; };
+		0DCFEA5A195927E1001B6353 /* vomi_splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFEA59195927E1001B6353 /* vomi_splash.sks */; };
 		0DDB781219589CAC00BB51B7 /* GJVomit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB781119589CAC00BB51B7 /* GJVomit.m */; };
 		0DE7877E18C36B5A00D72FF1 /* GJScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7877D18C36B5A00D72FF1 /* GJScene.m */; };
 		0DE7878118C3971C00D72FF1 /* GJTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7878018C3971C00D72FF1 /* GJTitleScene.m */; };
@@ -69,6 +71,8 @@
 		0D5936FC18C2EEEE00FCD2E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0D8FF8441953B0BC009B1ECF /* GJAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJAnimator.h; sourceTree = "<group>"; };
 		0D8FF8451953B0BC009B1ECF /* GJAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJAnimator.m; sourceTree = "<group>"; };
+		0DCFEA5619592774001B6353 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		0DCFEA59195927E1001B6353 /* vomi_splash.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = vomi_splash.sks; sourceTree = "<group>"; };
 		0DDB781019589CAC00BB51B7 /* GJVomit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJVomit.h; sourceTree = "<group>"; };
 		0DDB781119589CAC00BB51B7 /* GJVomit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJVomit.m; sourceTree = "<group>"; };
 		0DE7877C18C36B5A00D72FF1 /* GJScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJScene.h; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		0DE7879218C3A9D400D72FF1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0DCFEA59195927E1001B6353 /* vomi_splash.sks */,
 				0D55C3AF192A8E5300C2BD93 /* child0_closed.png */,
 				0D55C3B0192A8E5300C2BD93 /* child0_open.png */,
 				0DE7879A18C3F2AD00D72FF1 /* vomi.sks */,
@@ -207,6 +212,7 @@
 				0DE7879518C3B6A700D72FF1 /* packman_closed.png */,
 				0DE7879618C3B6A700D72FF1 /* packman_open.png */,
 				0DE7879318C3AC6100D72FF1 /* apple.png */,
+				0DCFEA5619592774001B6353 /* spark.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -269,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5936FB18C2EEEE00FCD2E5 /* Spaceship.png in Resources */,
+				0DCFEA5A195927E1001B6353 /* vomi_splash.sks in Resources */,
 				0DE7879718C3B6A700D72FF1 /* packman_closed.png in Resources */,
 				0DE7879C18C3F2AD00D72FF1 /* vomi.sks in Resources */,
+				0DCFEA5819592774001B6353 /* spark.png in Resources */,
 				0D5936FD18C2EEEE00FCD2E5 /* Images.xcassets in Resources */,
 				0DE7879D18C3F2AD00D72FF1 /* vomiTexture.png in Resources */,
 				0D5936F318C2EEEE00FCD2E5 /* Main_iPad.storyboard in Resources */,
