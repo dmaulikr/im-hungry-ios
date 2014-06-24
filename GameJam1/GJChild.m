@@ -36,10 +36,11 @@
         
         self.currentStomach = 0;
         
-        NSString *pukePath = [[NSBundle mainBundle] pathForResource:@"vomi" ofType:@"sks"];
+        NSString *pukePath = [[NSBundle mainBundle] pathForResource:@"vomi_splash" ofType:@"sks"];
         
         self.pukeSplashEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:pukePath];
         self.defaultPukeBirthRate = self.pukeSplashEmitter.particleBirthRate;
+        self.zPosition = 1;
         self.pukeSplashEmitter.zPosition = 10;
         self.pukeSplashEmitter.particleBirthRate = 0;
         [self addChild:self.pukeSplashEmitter];

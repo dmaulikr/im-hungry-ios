@@ -76,6 +76,7 @@
 -(void)startPuking{
     [self openMouth];
     _isPuking = YES;
+    self.pukeEmitter.emissionAngle = M_PI_2;
     self.pukeEmitter.particleBirthRate = self.defaultPukeBirthRate;
 }
 
@@ -107,7 +108,7 @@
     self.vomitEmitTimeAccumulator += elapsedTime;
     if(self.vomitEmitTimeAccumulator >= self.vomitEmitInterval){
         self.vomitEmitTimeAccumulator = 0;
-        if(_isPuking || true){
+        if(_isPuking){
             GJVomit* newVomit = [[GJVomit alloc] init];
             newVomit.position = self.position;
             [self.scene addChild:newVomit];
